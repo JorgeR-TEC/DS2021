@@ -165,7 +165,7 @@ class QuickSort: public Sorter<T>{
 		int i=lo+1;
 		int j=hi;
 		while (true){
-			while(data[i]<data[p] &&i<hi){
+			while(data[i]<=data[p] &&i<hi){
 				i++;
 			}
 			while(data[j]>data[p]&&j>lo){
