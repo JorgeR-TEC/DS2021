@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -23,7 +25,7 @@ int main(){
 	for(int i: v){
 		cout<<i<<",";
 	}
-	cout<<endl;*/
+	cout<<endl;
 	list<int> l;
 	l.push_back(5);
 	l.push_back(6);
@@ -41,5 +43,31 @@ int main(){
 	for(int i: l){
 		cout<<i<<",";
 	}
-	cout<<endl;
+	cout<<l.front()<<endl;
+	cout<<l.back()<<endl;
+	
+	stack<int> s;
+	s.push(5);
+	s.push(6);
+	s.push(7);
+	cout<<s.top()<<endl;
+	s.pop();
+	cout<<s.top()<<endl;
+	cout<<s.top()<<endl;
+	s.pop();
+	cout<<s.top()<<endl;
+	s.pop();*/
+	queue<int> q;
+	q.push(5);
+	q.push(6);
+	q.push(7);
+	cout<<"adelante: "<<q.front()<<endl;
+	cout<<"atras: "<<q.back()<<endl;
+	q.pop();
+	cout<<"adelante: "<<q.front()<<endl;
+	cout<<"atras: "<<q.back()<<endl;
+	q.pop();
+	cout<<"adelante: "<<q.front()<<endl;
+	cout<<"atras: "<<q.back()<<endl;
+	
 }
