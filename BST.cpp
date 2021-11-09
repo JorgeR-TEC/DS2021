@@ -160,12 +160,48 @@ class BST{
 		return aRegresar;
 	}
 	
+	void hermano(T value){
+		Nodo<T> *it=root;
+		if(root==NULL || root->value==value){
+			cout<<"No tiene hermano"<<endl;
+			return;
+		}
+		while(true){
+			if (it==NULL){
+				cout<<"No se encontro"<<endl;
+				return;
+			}
+			if(value<it->value){
+				//checar si es su hijo
+				if(it->izq!=NULL && it->izq->value==value){
+					if(it->der!=NULL){
+						cout<<"El hermano es "<<it->der->value<<endl;
+						return;
+					}
+				}else{
+					it=it->izq;
+				}
+			}else if(value>it->value){
+				//checar si es su hijo
+				if(it->der!=NULL && it->der->value==value){
+					if(it->izq!=NULL){
+						cout<<"El hermano es "<<it->izq->value<<endl;
+						return;
+					}
+				}else{
+					it=it->der;
+				}
+			}
+			
+		}
+	}
+	
 };
 
 
 int main(){
 	BST<int> b;
-	b.insert(710);
+	/*b.insert(710);
 	b.insert(689);
 	b.insert(2000);
 	b.insert(143);
@@ -173,13 +209,19 @@ int main(){
 	b.insert(1040);
 	b.insert(2099);
 	b.insert(3300);
-	b.insert(70);
+	b.insert(70);*/
+	b.insert(10);
+	b.insert(15);
+	b.insert(8);
+	b.insert(7);
+	b.insert(9);
 	b.printInorder();
 	cout<<endl;
+	b.hermano(7);
 	//cout<<b.find(1040)<<endl;
 	//cout<<b.find(5)<<endl;
-	b.borrar(710);
-	b.printInorder();
-	cout<<endl;
+	//b.borrar(710);
+	//b.printInorder();
+	//cout<<endl;
 	return 0;
 }
